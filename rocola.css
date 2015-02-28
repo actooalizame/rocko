@@ -1,0 +1,131 @@
+li {list-style: none;}
+
+.visible { visibility: visible!important; }
+
+.disabled { display: none; }
+
+.selected {
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+  background-color: #F7E4E5;
+  display: block!important;
+}
+
+.valign-wrapper.heading {
+  margin-bottom: 2.5rem;
+}
+
+.counter {
+  margin-left: .5em;
+  margin-top: .6em;
+
+}
+
+#nav-logged-in {
+  margin-top: -3.7em;
+}
+
+.headline {
+  font-family: 'Armata', sans-serif;
+}
+
+.heading h5 {
+  /*color: rgb(115, 90, 94);*/
+  font-family: 'Armata', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 2.8em;
+}
+
+span.retro-count {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.54rem;
+  font-weight: 700;
+  color: rgb(71, 4, 15);
+}
+
+.btn-vote { visibility: hidden; }
+
+.score {
+  margin-top: 0.333rem;
+  color: rgb(71, 4, 15);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.58rem;
+  font-weight: 700;
+}
+
+.card-content { padding-top:0!important; }
+.card {
+  position: relative;
+}
+
+.card-title {
+  position: absolute!important;
+  top: 0;
+  left: 5px!important;
+  padding: 0!important;
+  font-size: 1rem!important;
+  text-shadow: 1px 1px 6px #111;
+}
+
+.card.u-songs .status{
+  position: absolute;
+  bottom: 0px;
+  font-size: 12.5px;
+  left: 15px;
+
+}
+
+.title {
+  font-family: "Roboto", sans-serif
+  font-size: 12.8px!important;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight:bold;
+}
+
+.comment { 
+  margin-top: 2em;
+  color: red;
+  font-style: italic;
+}
+
+.admin-img { height: 122px; }
+
+.admin-action {
+  margin-top: 3em;
+  padding-bottom: 0
+}
+
+
+#login-buttons .login-buttons-with-only-one-button .login-button {
+  margin-right: 2rem;
+}
+
+@media (max-width: 600px){
+  .card.playlist {
+    height: 24.4rem;
+  }
+  
+  .u-songs.title {
+    margin-top: 0;
+  }
+  .u-songs .status{
+    bottom: 0;
+  }
+}
+
+@media (min-width: 601px){
+  .card.u-songs {
+    height: 26.2rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 991px) {
+  .card.playlist { height: 25rem; }
+  .btn-vote{ margin-top: -6px; }
+}
+
+@media (min-width: 992px) {
+  .card.playlist { height: 22rem; }
+}
+
+

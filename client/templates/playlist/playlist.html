@@ -1,0 +1,33 @@
+<template name="playList">
+  
+  <div class="row valign-wrapper heading">
+    <h1 class="col s12 headline">Elegí y votá</h1>
+  </div>  
+  <div class="row">   
+    {{#each playList}}    
+      <div id="playlist" class="col s6 m4 l2 card playlist z-depth-1 {{selectedClass}} {{readyClass}}">
+        <div class="card-heading">          
+          <h3 class="score right-align">{{score}}</h3>
+        </div>
+        <div class="card-image">
+          <img class="img-responsive thumb" src="http://img.youtube.com/vi/{{video_id}}/mqdefault.jpg"/>
+          <span class="card-title">@{{createdBy.services.twitter.screenName}}</span>
+        </div>  
+        <div class="">
+          <h6 class="title">{{title}} <a href="https://www.youtube.com/watch?v={{video_id}}" target="_blank"><i class="icon tiny mdi-action-visibility"></i></a></h6>
+        </div> 
+        
+        <div class="card-action valign-wrapper {{disableOwnVote}} {{disableVote}}">
+         {{#if currentUser}}
+         
+          <button class="btn waves-effect waves-light valign btn-vote {{visibleClass}} {{disableVote}}" type="submit">Votar</button>
+          
+           {{else}}
+          <h6>Debes loguearte para Votar!</h6>
+          {{/if}}
+        </div>
+      
+      </div>      
+    {{/each}}
+   </div>
+</template>
