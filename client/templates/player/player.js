@@ -1,5 +1,3 @@
-
-
 Template.player.rendered = function() {
   var queue = Songs.find({ready:true});
   var hook = queue.observeChanges({
@@ -46,7 +44,7 @@ Template.player.rendered = function() {
 
 Template.player.helpers({
   'player': function() {
-    return Songs.find({});
+    return Songs.find({current:true, ready:false});
   },
   'time': function() {
     return Session.get("time");

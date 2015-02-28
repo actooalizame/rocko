@@ -21,7 +21,7 @@ Meteor.publish("doneSongs", function(){
 }); 
 
 Meteor.publish("approvedSongs", function(){
-  return Songs.find({checked: true, ready:false});
+  return Songs.find({checked: true, ready:false, done:false});
 });
 
 Meteor.publish('users', function() {
