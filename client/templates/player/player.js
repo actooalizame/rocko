@@ -7,7 +7,6 @@ Template.player.rendered = function() {
       timeLeft = function() {
         if (duration > 0) {
           duration--;
-         console.log(duration);
         } else if(duration===0) {
           Meteor.call('setCurrent', id);
           return Meteor.clearInterval(interval);
@@ -29,7 +28,6 @@ Template.player.rendered = function() {
           duration--;
           Session.set("time", duration);
         } else {
-          console.log("That's All Folks");
           Meteor.call('setDone', id);
           return Meteor.clearInterval(interval);
         }

@@ -2,10 +2,11 @@
   
   <div class="row valign-wrapper heading">
     <h1 class="col s12 headline">Elegí y votá</h1>
+    {{maximum}}
   </div>  
   <div class="row">   
     {{#each playList}}    
-      <div id="playlist" class="col s6 m4 l2 card playlist z-depth-1 {{selectedClass}} {{readyClass}}">
+      <div id="playlist" class="col s6 m4 l2 card playlist z-depth-1 {{selectedClass}} {{readyClass}}" data-score="{{score}}">
         <div class="card-heading">          
           <h3 class="score right-align">{{score}}</h3>
         </div>
