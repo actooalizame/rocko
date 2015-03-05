@@ -1,7 +1,7 @@
 Template.player.rendered = function() {
-  var queue = Songs.find({checked:true}, {sort:{score:-1},limit:1});
+  var queue = Songs.find({ready:true});
   var hook = queue.observeChanges({
-    addedBefore: function(id, song){
+    added: function(id, song){
       var duration = Session.get("time");
       var interval, timeLeft;
       timeLeft = function() {

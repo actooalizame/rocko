@@ -40,7 +40,7 @@ Meteor.methods({
     Songs.update(songId, {$set: {ready:true,current:false}})
   },
   'setCurrent':function(songId){
-    Songs.update(songId, {$set: {current:true, ready:false, checked:false}});
+    Songs.update(songId, {$set: {current:true, ready:false}});
   },
   'setDone':function(songId){
     Songs.update(songId, {$set: {current:false, done: true, checked:false}});
