@@ -1,12 +1,3 @@
-/*Template.playList.rendered = function() {
-  var winner = Songs.findOne({approved:true}, {sort: {score: -1}});
-  var hook = winner.observeChanges({
-    changed: function(id, song){
-      var highScore = song.score;
-      console.log(highScore);
-    }
-  });
-};*/
 Template.playList.helpers({
   'playList': function(){
     return Songs.find({}, {sort: {score: -1, createdAt: -1} });
@@ -73,13 +64,6 @@ Template.playList.events({
   }
 });
 
-/*Template.playList.rendered = function(){
-  Tracker.autorun = function(){
-  var score = $('.card').first().data('score');
-  
-  console.log(score);
-  }
-};*/
   
   
 

@@ -2,10 +2,18 @@ Meteor.publish("allSongs", function(){
   return Songs.find({});
 });
 
+Meteor.publish("adminSongs", function(){
+  return Songs.find({done: false});
+});
+
 Meteor.publish("userSongs", function(){
   var user = Meteor.users.findOne(this.userId);
   var creator = user.services.twitter.id;
   return Songs.find({creatorId: creator });
+});
+
+Meteor.publish("playerNextSong", function(){
+  return Songs.find({checked: true});
 });
 
 Meteor.publish("readySong", function(){
