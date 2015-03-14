@@ -40,10 +40,10 @@ Meteor.methods({
     Songs.update(songId, {$set: {ready:true,current:false}})
   },
   'setCurrent':function(songId){
-    Songs.update(songId, {$set: {current:true, ready:false}});
+    Songs.update(songId, {$set: {current:true, ready:false}, $inc:{score:1000}});
   },
   'setDone':function(songId){
-    Songs.update(songId, {$set: {current:false, done: true, checked:false}});
+    Songs.update(songId, {$set: {current:false, done: true, checked:false}, $inc:{score:-1000}});
   },
   'toggleChecked': function(songId){
     Songs.update(songId, {$set: {checked: ! songId.checked}});

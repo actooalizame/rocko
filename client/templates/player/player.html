@@ -1,9 +1,11 @@
 <template name="player">
   {{#each player}}
+  <h3>{{time}}</h3>
   <div class="player">
     <div class="row">
       <div class="col s12 bg-black valign-wrapper">
     <iframe width="1366" height="610" class="playing valign" src="https://www.youtube.com/embed/{{video_id}}?autoplay=1&controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+        
       </div>
     </div>
   </div>

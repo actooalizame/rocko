@@ -1,7 +1,8 @@
 Template.player.rendered = function() {
-  var queue = Songs.find({ready:true});
-  var hook = queue.observeChanges({
-    added: function(id, song){
+ // var queue = Songs.find({ready:true});
+  var winner = Songs.find({});
+  var hook = winner.observeChanges({
+    addedBefore: function(id, song){
       var duration = Session.get("time");
       var interval, timeLeft;
       timeLeft = function() {

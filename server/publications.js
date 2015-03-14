@@ -13,7 +13,7 @@ Meteor.publish("userSongs", function(){
 });
 
 Meteor.publish("playerNextSong", function(){
-  return Songs.findOne({checked: true}, {sort:{score:-1}});
+  return Songs.find({checked: true}, {sort:{score:-1},limit:1});
 });
 
 Meteor.publish("readySong", function(){
