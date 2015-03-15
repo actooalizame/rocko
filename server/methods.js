@@ -5,7 +5,6 @@ Meteor.methods({
       title: title,
       score: score,
       duration: duration,
-      ready: false,
       current: false,
       done: false,
       comment: "",
@@ -32,18 +31,14 @@ Meteor.methods({
   'removeSong': function(selectedSong){
      Songs.remove(selectedSong)
   },
-  
   'vote': function(selectedSong){
     Songs.update(selectedSong, {$inc: {score: 1} });
-  },
-  'setReady': function(songId){
-    Songs.update(songId, {$set: {ready:true,current:false}})
   },
   'setCurrent':function(songId){
     Songs.update(songId, {$set: {current:true, ready:false}, $inc:{score:1000}});
   },
-  'setDone':function(songId){
-    Songs.update(songId, {$set: {current:false, done: true, checked:false}, $inc:{score:-1000}});
+   'setDone':function(songId){
+    Songs.update(songId, {$set: {current:false, done: true}, $inc:{score:-1000}});
   },
   'toggleChecked': function(songId){
     Songs.update(songId, {$set: {checked: ! songId.checked}});

@@ -1,5 +1,4 @@
 Template.player.rendered = function() {
- // var queue = Songs.find({ready:true});
   var winner = Songs.find({});
   var hook = winner.observeChanges({
     addedBefore: function(id, song){
@@ -43,7 +42,7 @@ Template.player.rendered = function() {
 
 Template.player.helpers({
   'player': function() {
-    return Songs.find({current:true, ready:false});
+    return Songs.find({current:true});
   },
   'time': function() {
     return Session.get("time");

@@ -16,12 +16,8 @@ Meteor.publish("playerNextSong", function(){
   return Songs.find({checked: true}, {sort:{score:-1},limit:1});
 });
 
-Meteor.publish("readySong", function(){
-  return Songs.find({ready: true});
-});
-
 Meteor.publish("currentSong", function(){
-  return Songs.find({current: true, ready:false});
+  return Songs.find({current: true});
 });  
 
 Meteor.publish("doneSongs", function(){
@@ -29,7 +25,7 @@ Meteor.publish("doneSongs", function(){
 }); 
 
 Meteor.publish("approvedSongs", function(){
-  return Songs.find({checked: true, current:false, ready:false, done:false});
+  return Songs.find({checked: true, current:false, done:false});
 });
 
 Meteor.publish('users', function() {

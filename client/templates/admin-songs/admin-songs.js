@@ -41,10 +41,5 @@ Template.adminSongs.events({
   'click .setCurrent': function(){
     var songId = this._id;
     Meteor.call('setCurrent', songId);
-  },
-  'click .setReady': function(){
-    var songId = this._id;
-    Meteor.call('setReady', songId);
   }
-
 });
