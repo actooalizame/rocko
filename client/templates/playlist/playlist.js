@@ -1,10 +1,9 @@
 Template.playList.helpers({
   'playList': function(){
-    return Songs.find({}, {sort: {score: -1, createdAt: -1} });
+    return Songs.find({checked:true, current:false}, {sort: {score: -1, createdAt: -1} });
   },
-  'maximum': function(){
-    var max = Songs.findOne({checked:true}, {sort:{score: -1}})
-    return max.score;
+  'nowPlaying': function(){
+    return Songs.find({current:true});
   },
   'selectedClass': function(){
     var songId = this._id;

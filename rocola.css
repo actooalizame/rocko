@@ -45,6 +45,14 @@ span.retro-count {
 
 .btn-vote { visibility: hidden; }
 
+
+.now-playing h4 {
+  float: left;
+  margin-right: 1em;
+}
+
+
+
 .score {
   margin-top: 0.333rem;
   color: rgb(71, 4, 15);

@@ -3,6 +3,22 @@
   <div class="row valign-wrapper heading">
     <h1 class="col s12 headline">Elegí y votá</h1>
   </div>  
+  <div class="container">
+    
+    <div class="collection row">
+      <div class="collection-item col s12 m8 now-playing">
+        {{#each nowPlaying}}
+        <div class="col s10">
+          <h4>{{title}}</h4>
+          <p>sentBy: @{{createdBy.services.twitter.screenName}}</p>
+        </div>
+        <div class="col s2">
+          <img class="img-responsive thumb playing-img right-align" src="http://img.youtube.com/vi/{{video_id}}/mqdefault.jpg"/>  
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
   <div class="row">   
     {{#each playList}}    
       <div id="playlist" class="col s6 m4 l2 card playlist z-depth-1 {{selectedClass}} {{readyClass}}" data-score="{{score}}">
