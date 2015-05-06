@@ -1,0 +1,39 @@
+<template name="userSongs">
+  <div class="right-align">{{>loginButtons}}</div>
+  {{#if currentUser}}
+  <div class="song-form row {{disableForm}} center-align">
+    <h5 class="">Canciones restantes: {{ remainingSongs }}</h5>
+    {{> addSongForm }}
+    
+  </div>
+  
+  <div class="song-list">
+    <div class="row">
+      {{#each uSongs}}
+    
+      <div class="col s6 m4 l2 card u-songs">
+        <div class="card-heading">
+        </div>
+        <div class="card-image">
+          <img class="img-responsive" src="http://img.youtube.com/vi/{{video_id}}/mqdefault.jpg"/>
+        </div>
+        <div class="card-content">
+          <div class="col-sm-8">
+            <h6 class="title">{{title}}</h6>
+             <a href="https://www.youtube.com/watch?v={{video_id}}" target="_blank"><i class="icon tiny mdi-action-visibility"></i></a>
+            <h6 class="status">{{status}}</h6>
+            <h6 class="comment">{{comment}}</h6>
+          </div>
+        </div>
+      </div>
+    
+      {{/each}}
+    </div>
+  </div>
+  {{else}}
+  <h3>Debes estar logueado para ver tus canciones enviadas!</h3>
+  {{/if}}
+ 
+  
+ 
+</template>
